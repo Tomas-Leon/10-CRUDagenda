@@ -1,5 +1,6 @@
 import Contacto from "./classContacto.js";
 
+//declaro variables globales
 const nuevoContacto = new Contacto(
   "juan",
   "perez",
@@ -10,4 +11,16 @@ const nuevoContacto = new Contacto(
   "https://campus.rollingcodeschool.com/course/view.php?id=230"
 );
 
-console.log(nuevoContacto)
+const modalContacto = new bootstrap.Modal(document.getElementById('contactModal'))
+const btnAgregar = document.querySelector('.btn-primary')
+
+
+//funciones
+
+function abrirModalContacto(){
+    modalContacto.show()
+}
+
+//el resto de la logica del proyecto
+
+btnAgregar.addEventListener('click', abrirModalContacto)
