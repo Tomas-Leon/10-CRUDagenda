@@ -51,9 +51,56 @@
     <main class="container my-4">
       <div class="d-flex justify-content-between">
         <h1>Lista contactos</h1>
-        <button class="btn btn-primary">
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#contactModal">
           <i class="bi bi-plus-circle"></i> Agregar
         </button>
+        <div class="modal fade" id="contactModal" tabindex="-1" aria-labelledby="contactModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="contactModalLabel">Agregar Contacto</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <!-- Formulario dentro del modal -->
+                  <form id="contactForm">
+                    <div class="mb-3">
+                      <label for="nombre" class="form-label">Nombre</label>
+                      <input type="text" class="form-control" id="nombre" name="nombre" required minlength="2" maxlength="50">
+                    </div>
+                    <div class="mb-3">
+                      <label for="apellido" class="form-label">Apellido</label>
+                      <input type="text" class="form-control" id="apellido" name="apellido" required minlength="2" maxlength="50">
+                    </div>
+                    <div class="mb-3">
+                      <label for="apodo" class="form-label">Apodo</label>
+                      <input type="text" class="form-control" id="apodo" name="apodo" required minlength="2" maxlength="30">
+                    </div>
+                    <div class="mb-3">
+                      <label for="email" class="form-label">Email</label>
+                      <input type="email" class="form-control" id="email" name="email" required>
+                    </div>
+                    <div class="mb-3">
+                      <label for="direccion" class="form-label">Dirección</label>
+                      <input type="text" class="form-control" id="direccion" name="direccion" required minlength="5" maxlength="100">
+                    </div>
+                    <div class="mb-3">
+                      <label for="telefono" class="form-label">Teléfono</label>
+                      <input type="tel" class="form-control" id="telefono" name="telefono" required pattern="^[0-9]{10}$" placeholder="Ejemplo: 1234567890">
+                    </div>
+                    <div class="mb-3">
+                      <label for="urlImagen" class="form-label">URL de la imagen</label>
+                      <input type="url" class="form-control" id="urlImagen" name="urlImagen" required>
+                    </div>
+                  </form>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                  <button type="submit" class="btn btn-primary" form="contactForm">Guardar Contacto</button>
+                </div>
+              </div>
+            </div>
+          </div>
       </div>
       <section class="table-responsive mt-5">
         <table class="table table-striped">
